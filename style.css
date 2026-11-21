@@ -1,0 +1,88 @@
+/* Tally website. Same colors as the app (src/constants/theme.ts): cream page,
+   forest green text, lime only for the one main button. */
+:root {
+  --forest: #17382B;
+  --cream: #F6F5EF;
+  --white: #FFFFFF;
+  --muted: #6E766C;
+  --border: #E4E2D8;
+  --lime: #D7F06B;
+  --danger: #B3261E;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--forest);
+  font: 17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--forest); }
+.bar { padding: 20px 16px; max-width: 720px; margin: 0 auto; }
+.wordmark {
+  font: 700 26px/1 ui-rounded, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+/* Home */
+.hero { max-width: 720px; margin: 0 auto; padding: 32px 16px 24px; }
+.hero h1 {
+  font: 700 clamp(34px, 8vw, 52px)/1.05 ui-rounded, system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+}
+.hero p.lede { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 34em; }
+
+.signup {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 480px;
+}
+.signup label { display: block; font-weight: 600; margin-bottom: 8px; }
+.signup .row { display: flex; gap: 8px; flex-wrap: wrap; }
+.signup input[type="email"] {
+  flex: 1 1 200px;
+  min-width: 0;
+  font: inherit;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--forest);
+}
+.signup input[type="email"]:focus { outline: 2px solid var(--forest); outline-offset: 1px; }
+.signup button {
+  flex: 0 0 auto;
+  font: 600 17px/1 system-ui, sans-serif;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--lime);
+  color: var(--forest);
+  cursor: pointer;
+}
+.signup button:disabled { opacity: 0.6; cursor: default; }
+.signup .fine { font-size: 14px; color: var(--muted); margin: 12px 0 0; }
+.signup .msg { margin: 12px 0 0; font-weight: 600; }
+.signup .msg.error { color: var(--danger); }
+/* Honeypot: hidden from people, bots fill it in. */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.points { max-width: 720px; margin: 0 auto; padding: 24px 16px 8px; display: grid; gap: 12px; }
+.points div { background: var(--white); border-radius: 16px; padding: 16px 18px; }
+.points h2 { font-size: 17px; margin: 0 0 4px; }
+.points p { margin: 0; color: var(--muted); }
+
+footer { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; font-size: 14px; color: var(--muted); }
+footer a { color: var(--muted); }
+
+/* Privacy page */
+.doc { max-width: 720px; margin: 0 auto; padding: 8px 16px; }
+.doc h1 { font: 700 34px/1.1 ui-rounded, system-ui, sans-serif; letter-spacing: -0.02em; }
+.doc h2 { font-size: 21px; margin-top: 32px; }
+.doc .table { overflow-x: auto; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 15px; background: var(--white); border-radius: 12px; overflow: hidden; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.doc code { font-size: 0.9em; }
